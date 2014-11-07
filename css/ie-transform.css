@@ -1,0 +1,4 @@
+.thumbnail iframe {
+    -ms-transform-origin: 0 0;
+    -ms-transform: scale(0.4, 0.4);
+}

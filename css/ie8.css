@@ -1,0 +1,16 @@
+/* So IE8 is a horrible mix in which neither the old, IE-specific 
+'zoom' works as it did previously, nor is there -ms-transform:scale
+available yet.  Ergo note the following notes.  */
+
+.thumbnail {
+    zoom: .4;   /* The zoom you want, it should be the same as in other css */
+    margin: 20px;
+    width: 1000px;  /* these are the proportions of the IFRAME in elvis.css */
+    height: 750px;  /* these are the proportions of the IFRAME in elvis.css */
+    float:left;
+    margin:20px;
+    position: relative;
+}
+.thumbnail a {
+    font-size: 2.5em;  /* This gets zoomed down so divide 1 by your zoom factor for the em */
+}

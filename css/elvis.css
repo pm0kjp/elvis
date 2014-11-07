@@ -1,0 +1,67 @@
+#wrapper {
+    margin:2em auto;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px gray;
+    border:1px solid gray;
+    padding:3em;
+    width: 450px;
+}
+
+p, select, option, input {
+    margin: .25em;
+    font-size: 1em;
+}
+
+h1 {
+    margin: 0px auto;
+    text-align: center;
+}
+
+/* a note re: height and width.  Start off by adding to .thumbnail {} the final width and height
+   you want to see in the final product.  Aspect ratio is totally up to you.
+
+   Then pick the size of iframe you want to minimize.  If you want to see the page as if it were a  
+   mini desktop, you'll want desktop dimensions.  If you want to see the sites as they would 
+   appear on a phone, you'll want some smaller width.  It's up to you.  I've gone with a 
+   mini-desktop, picking a smallish desktop resolution (1000px wide).  Add these height and
+   width values to .thumbnail iframe {}.  
+
+   The aspect ratio (w/h) should match for both sets!  If you pick 4:3 for .thumbnail, the 
+   math has to match for .thumbnail iframe, at least if you want only one scale value to use
+   across the board.
+
+   Finally, divide the smaller .thumbnail height (or width) by the iframe height (or width) and 
+   *THAT* will be your scale value, which will be added in your transform scales in this file and 
+   in ie-only.css.  */
+
+
+.thumbnail { /* the width and height here are your resultant sizes. */
+    width: 400px;
+    height: 300px;
+    float:left;
+    margin:20px;
+    position: relative;
+}
+ 
+.thumbnail iframe {  /* the width and height here are your "unshrunken" sizes.  Important bc of the scale variable later. */
+    position: relative;
+    z-index: 1;
+    width: 1000px;   
+    height: 750px;
+ 
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+
+ 
+    -webkit-transform:  scale(0.4, 0.4);   /* Gets the size down to fit into your .thumbnail. */
+    -moz-transform:  scale(0.4, 0.4);      /* Gets the size down to fit into your .thumbnail. */
+    transform:  scale(0.4, 0.4);           /* Gets the size down to fit into your .thumbnail. */
+    overflow: hidden;
+
+}
+
+.thumbnail a {
+    position: absolute;
+    top: 300px;
+}
