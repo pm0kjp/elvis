@@ -1,4 +1,3 @@
-http://www.nytimes.com
 http://www.cnn.com
 http://www.huffingtonpost.com
 http://www.elpais.com
